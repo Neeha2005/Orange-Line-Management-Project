@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
       // Redirect to login page
-      window.location.href = 'login.html';
+      window.location.href = 'login.php';
     });
   }
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (registerBtn) {
     registerBtn.addEventListener("click", () => {
       // Redirect to register page
-      window.location.href = 'Register.html';
+      window.location.href =  '/Register.php';
     });
   }
 });

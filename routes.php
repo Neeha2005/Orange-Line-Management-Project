@@ -1,3 +1,6 @@
+<?php
+// routes.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +22,11 @@
           <img src="css/images/logo (2).png" alt="Logo" class="logo-image" />
         </div>
         <div class="menu-center">
-          <a href="Home.html" class="home-link"><i class="fas fa-home"></i></a>
-          <a href="routes.html" class="nav-link-button">Routes</a>
-          <a href="stations.html" class="nav-link-button">Stations</a>
-          <a href="schedule.html" class="nav-link-button">Schedule</a>
-          <a href="fares.html" class="nav-link-button">Fares</a>
+          <a href="home.php" class="home-link"><i class="fas fa-home"></i></a>
+          <a href="routes.php" class="nav-link-button">Routes</a>
+          <a href="stations.php" class="nav-link-button">Stations</a>
+          <a href="schedule.php" class="nav-link-button">Schedule</a>
+          <a href="fares.php" class="nav-link-button">Fares</a>
         </div>
         <div class="text-box">
           <div class="main-title">Lahore Orange Line</div>
@@ -32,7 +35,7 @@
       </div>
       <div class="nav-buttons">
         <button class="login-btn" id="loginButton">Login</button>
-        <button class="register-btn">Register</button>
+        <button class="register-btn" id="registerButton">Register</button>
       </div>
     </nav>
 
@@ -45,6 +48,6 @@
     </div>
   </div>
 
-  <script src="/js/routes.js"></script>
+  <script src="js/routes.js"></script>
 </body>
 </html>

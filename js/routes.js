@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
       // Redirect to login page
-      window.location.href = 'login.html';
+      window.location.href = 'login.php';
     });
   }
 
@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerBtn = document.querySelector(".register-btn");
   if (registerBtn) {
     registerBtn.addEventListener("click", () => {
-      // Replace this with your register page redirect
-      alert("Register button clicked - will redirect to register page");
-      // window.location.href = 'register.html'; // Uncomment when ready
+      // Redirect to register page
+      window.location.href = 'Register.php';
     });
   }
 });

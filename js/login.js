@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Common: setup register button from home page
     document.getElementById("registerButton")?.addEventListener("click", function () {
-        window.location.href = "Register.html"; // Adjust path if needed
+        window.location.href = "Register.php"; // Adjust path if needed
     });
 
     // If login page loaded
@@ -140,9 +140,9 @@ function canGoBack() {
 
 function redirectToHome() {
     const homePages = [
-        'index.html',
-        '../index.html',
-        '/index.html',
+        'Home.php',
+        '../Home.php',
+        '/Home.php',
         window.location.href.split('/').slice(0, 3).join('/')
     ];
 

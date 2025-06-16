@@ -180,3 +180,12 @@ body {
     color: #2e7d32;
     border: 1px solid #a5d6a7;
 }
+.error-message {
+  background-color: #ffe0e0;
+  color: #d8000c;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+}

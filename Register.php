@@ -1,3 +1,7 @@
+<?php
+// Start session if needed (optional in login page, mostly needed after login)
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -54,14 +58,15 @@
       registerScreen.classList.add('hidden');
       welcomeScreen.classList.remove('hidden');
     });
+
     document.addEventListener("DOMContentLoaded", () => {
-  const closeBtn = document.getElementById("closeRegisterBtn");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      window.location.href = "Home.html"; // or 'index.html' if that’s your homepage
+      const closeBtn = document.getElementById("closeRegisterBtn");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          window.location.href = "Home.php"; // Or "Home.php" if you use PHP for home
+        });
+      }
     });
-  }
-});
   </script>
 </body>
 </html>
