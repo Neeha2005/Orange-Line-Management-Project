@@ -1,5 +1,6 @@
 <?php
-$pdo = require_once 'data/db_connect.php';
+$db = new PDO('sqlite:' . __DIR__ . '/data/orange_line_project.db');
+
 session_start();
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-$pdo = require 'data/db_connect.php';
+$db = new PDO('sqlite:' . __DIR__ . '/data/orange_line_project.db');
 
 try {
     $stmt = $pdo->query("SELECT station_name, address, latitude, longitude FROM stations");
@@ -32,7 +32,7 @@ try {
         </div>
 
         <div class="menu-center">
-            <a href="home.php" class="nav-link-button"><i class="fas fa-home"></i></a>
+            <a href="index.html" class="nav-link-button"><i class="fas fa-home"></i></a>
             <a href="routes.php" class="nav-link-button">Routes</a>
             <a href="stations.php" class="nav-link-button active">Stations</a>
             <a href="schedule.php" class="nav-link-button">Schedule</a>

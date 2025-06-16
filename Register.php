@@ -63,7 +63,7 @@
       const closeBtn = document.getElementById("closeRegisterBtn");
       if (closeBtn) {
         closeBtn.addEventListener("click", () => {
-          window.location.href = "Home.php"; // Or "Home.php" if you use PHP for home
+          window.location.href = "index.html"; // Or "index.html" if you use PHP for home
         });
       }
     });

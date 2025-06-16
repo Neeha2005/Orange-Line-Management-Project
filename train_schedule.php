@@ -2,7 +2,8 @@
 header('Content-Type: application/json');
 
 try {
-    $db = new PDO('sqlite:data/orange_line_project.db');
+    $db = new PDO('sqlite:' . __DIR__ . '/data/orange_line_project.db');
+
 
     $query = "
         SELECT s.train_id, f.name AS from_station, t.name AS to_station,

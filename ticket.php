@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
+$db = new PDO('sqlite:' . __DIR__ . '/data/orange_line_project.db');
 
-$db = new PDO('sqlite:data/orange_line_project.db');
 
 // GET request: fetch distance, fare, time
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {

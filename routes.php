@@ -22,7 +22,7 @@
           <img src="css/images/logo (2).png" alt="Logo" class="logo-image" />
         </div>
         <div class="menu-center">
-          <a href="home.php" class="home-link"><i class="fas fa-home"></i></a>
+          <a href="index.html" class="home-link"><i class="fas fa-home"></i></a>
           <a href="routes.php" class="nav-link-button">Routes</a>
           <a href="stations.php" class="nav-link-button">Stations</a>
           <a href="schedule.php" class="nav-link-button">Schedule</a>
