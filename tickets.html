@@ -1,25 +1,49 @@
-<?php
-include 'calculate_distance.php'; 
-?>
-
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tickets</title>
-    <link rel="stylesheet" href="css/tickets.css">
+  <meta charset="UTF-8">
+  <title>Train Schedule</title>
+  <link rel="stylesheet" href="css/train_schedule.css">
 </head>
 <body>
-    <h1>My Tickets</h1>
-    <p>View and manage your train tickets</p>
+  <div class="train-schedule-container">
+    <h2>Search Train Schedules</h2>
     
-    <div id="tickets-container">
-        <!-- Tickets will be loaded here -->
-    </div>
+    <form id="train-search-form">
+      <div class="input-group">
+        <label for="source">Source:</label>
+        <input type="text" id="source" onkeyup="filterStations(this, 'source-list')" autocomplete="off">
+        <ul id="source-list" class="dropdown-list"></ul>
+      </div>
 
-    <script src="js/tickets.js"></script>
-    
+      <div class="input-group">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" onkeyup="filterStations(this, 'destination-list')" autocomplete="off">
+        <ul id="destination-list" class="dropdown-list"></ul>
+      </div>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="train-results">
+      <h3>Available Trains</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Train ID</th>
+            <th>Train Name</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Fare</th>
+          </tr>
+        </thead>
+        <tbody id="results-body">
+          <!-- Results populate here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/train_schedule.js"></script>
 </body>
 </html>

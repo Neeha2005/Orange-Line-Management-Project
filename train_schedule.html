@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orange Line - Train Schedules</title>
+    <link rel="stylesheet" href="css/train_schedule.css">
+ 
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>Orange Line Train Booking</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="filter-section">
+      <input list="from-list" id="from" placeholder="From Station" />
+      <datalist id="from-list"></datalist>
+
+      <input list="to-list" id="to" placeholder="To Station" />
+      <datalist id="to-list"></datalist>
+
+      <input type="date" id="date" />
+      <button id="search-btn">Find Now</button>
+    </section>
+
+    <section id="train-list" class="train-list">
+      <!-- Train cards will be injected here -->
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2025 Orange Line. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/train_schedule.js"></script>
+</body>
+</html>
