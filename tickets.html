@@ -1,49 +1,25 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Train Schedule</title>
-  <link rel="stylesheet" href="css/train_schedule.css">
+  <meta charset="UTF-8" />
+  <title>Ticket Preview - Orange Line</title>
+  <link rel="stylesheet" href="css/tickets.css" />
 </head>
 <body>
-  <div class="train-schedule-container">
-    <h2>Search Train Schedules</h2>
-    
-    <form id="train-search-form">
-      <div class="input-group">
-        <label for="source">Source:</label>
-        <input type="text" id="source" onkeyup="filterStations(this, 'source-list')" autocomplete="off">
-        <ul id="source-list" class="dropdown-list"></ul>
-      </div>
-
-      <div class="input-group">
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" onkeyup="filterStations(this, 'destination-list')" autocomplete="off">
-        <ul id="destination-list" class="dropdown-list"></ul>
-      </div>
-
-      <button type="submit">Search</button>
-    </form>
-
-    <div id="train-results">
-      <h3>Available Trains</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Train ID</th>
-            <th>Train Name</th>
-            <th>Departure</th>
-            <th>Arrival</th>
-            <th>Fare</th>
-          </tr>
-        </thead>
-        <tbody id="results-body">
-          <!-- Results populate here -->
-        </tbody>
-      </table>
-    </div>
+  <div class="ticket-container">
+    <h1>Ticket Preview</h1>
+    <table class="ticket-table">
+      <tr><th>From</th><td id="from"></td></tr>
+      <tr><th>To</th><td id="to"></td></tr>
+      <tr><th>Departure Time</th><td id="departure"></td></tr>
+      <tr><th>Travel Date</th><td id="travel-date"></td></tr>
+      <tr><th>Distance (km)</th><td id="distance"></td></tr>
+      <tr><th>Fare ($)</th><td id="fare"></td></tr>
+    </table>
+    <button id="confirm-btn">Confirm Ticket</button>
+    <div id="status"></div>
   </div>
 
-  <script src="js/train_schedule.js"></script>
+  <script src="js/ticket.js"></script>
 </body>
 </html>
