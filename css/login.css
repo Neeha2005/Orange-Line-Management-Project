@@ -61,8 +61,15 @@ body {
 .login-screen {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
+
+.login-screen form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Adds vertical space between inputs, buttons, etc. */
+}
+
 
 .login-screen h2 {
   margin: 0;

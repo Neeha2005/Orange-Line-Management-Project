@@ -1,59 +1,61 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Initialize the login page
-    initLoginPage();
-    
-    // Set up all event listeners
-    setupEventListeners();
-    
-    // Handle user form submission
-    setupUserFormSubmission();
+document.addEventListener("DOMContentLoaded", function () {
+    // Common: setup register button from home page
+    document.getElementById("registerButton")?.addEventListener("click", function () {
+        window.location.href = "Register.html"; // Adjust path if needed
+    });
+
+    // If login page loaded
+    if (document.getElementById("loginPage")) {
+        initLoginPage();
+        setupEventListeners();
+        setupUserFormSubmission();
+    }
+
+    // If register page loaded
+    if (document.getElementById("registerPage")) {
+        setupRegisterCloseButton(); // Setup the close (X) for register
+    }
 });
 
+// LOGIN PAGE LOGIC
 function initLoginPage() {
-    // Initial screen setup
     hideAllScreens();
     showScreen("welcome-screen");
 }
 
 function setupEventListeners() {
-    // Login flow navigation
     document.getElementById('mainLoginBtn')?.addEventListener('click', () => showScreen("role-screen"));
     document.getElementById('adminRoleBtn')?.addEventListener('click', () => showScreen("admin-login"));
     document.getElementById('userRoleBtn')?.addEventListener('click', () => showScreen("user-login"));
-    
-    // Back navigation
     document.getElementById('backToWelcomeBtn')?.addEventListener('click', () => showScreen("welcome-screen"));
     document.getElementById('backToRolesBtn1')?.addEventListener('click', () => showScreen("role-screen"));
     document.getElementById('backToRolesBtn2')?.addEventListener('click', () => showScreen("role-screen"));
-    
-    // Close button with improved redirection
     document.getElementById('closeLoginBtn')?.addEventListener('click', handleCloseButton);
 }
 
 function setupUserFormSubmission() {
     const userForm = document.getElementById("userForm");
+    if (!userForm) return;
+
     const messageContainer = document.createElement('div');
     messageContainer.id = 'loginMessage';
     userForm.appendChild(messageContainer);
 
-    userForm.addEventListener("submit", async function(e) {
+    userForm.addEventListener("submit", async function (e) {
         e.preventDefault();
-        
+
         const email = userForm.querySelector('input[name="email"]').value;
         const password = userForm.querySelector('input[name="password"]').value;
         const messageElement = document.getElementById('loginMessage');
-        
-        // Clear previous messages
+
         messageElement.textContent = '';
         messageElement.className = '';
-        
-        // Basic validation
+
         if (!email || !password) {
             showMessage('Please fill in all fields', 'error');
             return;
         }
-        
-        // Email format validation
+
         if (!validateEmail(email)) {
             showMessage('Please enter a valid email address', 'error');
             return;
@@ -65,21 +67,16 @@ function setupUserFormSubmission() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ 
-                    email: email,
-                    password: password 
-                })
+                body: JSON.stringify({ email, password })
             });
 
             const data = await response.json();
 
             if (data.success) {
                 showMessage('Login successful! Redirecting...', 'success');
-                // Store user data in session/local storage if needed
                 if (data.userData) {
                     localStorage.setItem('user', JSON.stringify(data.userData));
                 }
-                // Redirect after short delay
                 setTimeout(() => {
                     window.location.href = data.redirect || 'dashboard.html';
                 }, 1000);
@@ -93,7 +90,12 @@ function setupUserFormSubmission() {
     });
 }
 
-// Helper functions
+// REGISTER PAGE CLOSE BUTTON
+function setupRegisterCloseButton() {
+    document.getElementById('closeRegisterBtn')?.addEventListener('click', handleCloseButton);
+}
+
+// HELPER FUNCTIONS
 function showScreen(screenId) {
     hideAllScreens();
     const screen = document.getElementById(screenId);
@@ -113,8 +115,7 @@ function showMessage(message, type) {
     messageElement.textContent = message;
     messageElement.className = `message ${type}`;
     messageElement.style.display = 'block';
-    
-    // Hide message after 5 seconds
+
     setTimeout(() => {
         messageElement.style.display = 'none';
     }, 5000);
@@ -155,3 +156,4 @@ function redirectToHome() {
 
     window.location.href = accessiblePage || window.location.origin;
 }
+
